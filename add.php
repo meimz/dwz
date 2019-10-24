@@ -23,6 +23,7 @@ if($r){
     while ($isExit){
         if($index>3){
             $nowLength++;
+            $index=0;
         }
         $code=randStr($nowLength);
         $isExit=getByCode($code);

@@ -119,6 +119,9 @@
         padding: 20px;
         color: #F00;
     }
+    a {
+         color: #ccc;
+     }
 
 </style>
 <div class="res">
@@ -131,7 +134,7 @@
         <div class="col-sm-3 js-add-to" > <button type="submit" id="shorten" class="btn type--uppercase btn--primary">缩短</button> </div>
     </form>
     <p style="font-size: 12px;color: #9c9797;padding: 5px 0 0 15px;">
-        提示：发布的链接仅供短时间测试使用，如需稳定服务，请联系站长。本站支持 http 以及 https<br/> prowerBy <a href="https://m2a.co">m2a.co</a></p>
+        提示：发布的链接仅供短时间测试使用，如需稳定服务，请联系站长。本站支持 http 以及 https 。违规网站请勿使用，不定期会有爬虫进行清理。<br/> 本站源码已开源 地址 <a target="_blank" href="https://github.com/meimz/dwz">https://github.com/meimz/dwz</a> <br/> prowerBy <a target="_blank" href="https://m2a.co">m2a.co</a> <a target="_blank" href="http://beian.miit.gov.cn/">浙ICP备19025366号-2</a> </p>
 </div>
 <div>
 
@@ -144,7 +147,8 @@
                 if(res.err==1){
                     alert(res.msg);
                 }else{
-                    $('.res').append('您的短网址为 https://m2a.co/'+res.data.code)
+                    var url='https://m2a.co/'+res.data.code;
+                    $('.res').append('您的短网址为 <a target="_blank"  href="'+url+'">'+url+'</a>');
                 }
             });
             return false;
